@@ -22,7 +22,7 @@ module.exports.os = function() {
   let returnVal = "failoverUsername";
   try {
     if (typeof os.userInfo === 'function') {
-      returnVal = os.userInfo().username;
+      returnVal = os.userInfo()?.username ?? returnVal;
     }
   } catch(e) {
     handleUserInfoError(e);
