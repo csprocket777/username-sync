@@ -19,14 +19,16 @@ module.exports.env = function() {
 };
 
 module.exports.os = function() {
+  let returnVal = "failoverUsername";
   try {
     if (typeof os.userInfo === 'function') {
-      return os.userInfo().username;
+      returnVal = os.userInfo().username;
     }
   } catch(e) {
     handleUserInfoError(e);
-    return;
+//     return;
   }
+  return returnVal;
 };
 
 module.exports.execSync = function() {
