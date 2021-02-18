@@ -25,7 +25,7 @@ module.exports.os = function() {
       returnVal = os.userInfo()?.username ?? returnVal;
     }
   } catch(e) {
-    handleUserInfoError(e);
+//     handleUserInfoError(e);
 //     return;
   }
   return returnVal;
